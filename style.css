@@ -269,3 +269,174 @@ footer {
     grid-column: 1 / -1;
   }
 }
+
+
+footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer .copyright strong {
+  color: #005df6;
+  font-weight: 600;
+}
+
+
+.section-description {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.table-wrapper {
+  width: 100%;
+  margin-top: 18px;
+  overflow-x: auto;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.expense-table th {
+  padding: 13px 12px;
+  background: #f7f9fc;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.expense-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #edf0f5;
+  vertical-align: middle;
+}
+
+.expense-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.expense-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.expense-table .description-cell {
+  min-width: 110px;
+  overflow-wrap: anywhere;
+}
+
+.expense-table .expense-description {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 5px 8px;
+  color: #2858a5;
+  background: #edf4ff;
+  border-radius: 5px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.expense-table .date-cell {
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.amount-column {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.expense-table .expense-amount {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.action-cell {
+  text-align: right;
+}
+
+.expense-table .delete-button {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#expense-list {
+  display: table-row-group;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#expense-list tr {
+  display: table-row;
+}
+
+#empty-state {
+  padding: 24px 14px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  margin-top: 18px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .expense-table {
+    font-size: 12px;
+  }
+
+  .expense-table th,
+  .expense-table td {
+    padding: 12px 8px;
+  }
+
+  .expense-table th {
+    font-size: 10px;
+  }
+
+  .expense-table .description-cell {
+    min-width: 90px;
+  }
+
+  .category-badge {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .expense-table .delete-button {
+    font-size: 11px;
+  }
+}

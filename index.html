@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Expense Tracker</title>
-  <link rel="stylesheet" href="Expense.css">
-  <script src="expense.js  " defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js  " defer></script>
 </head>
 <body>
   <main class="app">
@@ -31,7 +31,7 @@
           <input
             type="text"
             id="description"
-            placeholder="e.g. Lunch, transport"
+          
             maxlength="100"
             required
           >
@@ -42,7 +42,7 @@
           <input
             type="number"
             id="amount"
-            placeholder="e.g. 2500"
+           
             min="0.01"
             step="0.01"
             required
@@ -71,19 +71,45 @@
       </form>
     </section>
 
-    <section class="transactions-section">
-      <div class="section-heading">
-        <h2>Recent expenses</h2>
-        <span id="list-count">0 items</span>
-      </div>
+  
+<section class="transactions-section">
+  <div class="section-heading">
+    <div>
+      <h2>Transactions</h2>
+      <p class="section-description">Your recorded expenses</p>
+    </div>
+    <span id="list-count">0 items</span>
+  </div>
 
-      <p id="empty-state">No expenses yet. Add your first expense above.</p>
-      <ul id="expense-list" aria-label="Expense list"></ul>
-    </section>
+  <p id="empty-state">
+    No expenses yet. Add your first expense above.
+  </p>
 
-    <footer>
-      Your expenses are saved on this device.
-    </footer>
+  <div class="table-wrapper">
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Date</th>
+          <th scope="col" class="amount-column">Amount</th>
+          <th scope="col"><span class="sr-only">Actions</span></th>
+        </tr>
+      </thead>
+      <tbody id="expense-list"></tbody>
+    </table>
+  </div>
+</section>
+
+
+   
+<footer>
+  <p>Your expenses are saved on this device.</p>
+  <p class="copyright">
+    Built by <strong>Dev Kyng</strong> &copy; 2026
+  </p>
+</footer>
+
   </main>
 </body>
 </html>

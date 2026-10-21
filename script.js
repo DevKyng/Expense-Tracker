@@ -62,6 +62,7 @@ expenseForm.addEventListener("submit", function (event) {
   descriptionInput.focus();
 });
 
+
 function renderExpenses() {
   expenseList.replaceChildren();
 
@@ -70,28 +71,35 @@ function renderExpenses() {
   for (const expense of expenses) {
     total += expense.amount;
 
-    const item = document.createElement("li");
-    item.className = "expense-item";
+    const row = document.createElement("tr");
 
-    const details = document.createElement("div");
-    details.className = "expense-details";
+    const descriptionCell = document.createElement("td");
+    descriptionCell.className = "description-cell";
 
-    const description = document.createElement("div");
+    const description = document.createElement("span");
     description.className = "expense-description";
     description.textContent = expense.description;
 
-    const meta = document.createElement("div");
-    meta.className = "expense-meta";
-    meta.textContent = `${expense.category} · ${formatDate(expense.date)}`;
+    descriptionCell.append(description);
 
-    details.append(description, meta);
+    const categoryCell = document.createElement("td");
 
-    const right = document.createElement("div");
-    right.className = "expense-right";
+    const categoryBadge = document.createElement("span");
+    categoryBadge.className = "category-badge";
+    categoryBadge.textContent = expense.category;
 
-    const amount = document.createElement("div");
-    amount.className = "expense-amount";
-    amount.textContent = nairaFormatter.format(expense.amount);
+    categoryCell.append(categoryBadge);
+
+    const dateCell = document.createElement("td");
+    dateCell.className = "date-cell";
+    dateCell.textContent = formatDate(expense.date);
+
+    const amountCell = document.createElement("td");
+    amountCell.className = "amount-column expense-amount";
+    amountCell.textContent = nairaFormatter.format(expense.amount);
+
+    const actionCell = document.createElement("td");
+    actionCell.className = "action-cell";
 
     const deleteButton = document.createElement("button");
     deleteButton.type = "button";
@@ -106,19 +114,30 @@ function renderExpenses() {
       deleteExpense(expense.id);
     });
 
-    right.append(amount, deleteButton);
-    item.append(details, right);
-    expenseList.append(item);
+    actionCell.append(deleteButton);
+
+    row.append(
+      descriptionCell,
+      categoryCell,
+      dateCell,
+      amountCell,
+      actionCell
+    );
+
+    expenseList.append(row);
   }
 
   totalExpensesElement.textContent = nairaFormatter.format(total);
+
   expenseCountElement.textContent =
     `${expenses.length} ${expenses.length === 1 ? "transaction" : "transactions"} recorded`;
+
   listCountElement.textContent =
     `${expenses.length} ${expenses.length === 1 ? "item" : "items"}`;
 
   emptyState.hidden = expenses.length > 0;
 }
+
 
 function deleteExpense(id) {
   expenses = expenses.filter(function (expense) {
