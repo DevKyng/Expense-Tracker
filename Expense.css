@@ -1,0 +1,271 @@
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --blue: #005df6;
+  --border: #e2e7ef;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  color: #172033;
+  background: #eef3fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --blue: #005df6;
+  --border: #e2e7ef;
+  --muted: #6b7280;
+}
+
+
+html {
+  min-height: 100%;
+  background-color: #dce6f3;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #dce6f3;
+  background-image: radial-gradient(
+    ellipse at top left,
+    #c6d9f5 0%,
+    #dce6f3 55%,
+    #e8edf5 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  width: min(100% - 32px, 560px);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(27px, 6vw, 34px);
+  letter-spacing: -1px;
+}
+
+.subtitle,
+.summary > p,
+footer {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.summary {
+  padding: 22px;
+  color: white;
+  background: #14233b;
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.summary > p {
+  margin: 0;
+}
+
+.summary > p:first-child {
+  color: #c7d2e3;
+}
+
+.summary h2 {
+  margin: 12px 0;
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.entry-section,
+.transactions-section {
+  margin-bottom: 28px;
+}
+
+.entry-section h2,
+.transactions-section h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  color: #172033;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #b7d0ff;
+  border-color: var(--blue);
+}
+
+button {
+  min-height: 46px;
+  padding: 12px 16px;
+  color: white;
+  background: var(--blue);
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004bd0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-heading span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#empty-state {
+  padding: 22px 12px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  margin-top: 16px;
+}
+
+#expense-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.expense-details {
+  min-width: 0;
+}
+
+.expense-description {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.expense-meta {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.expense-right {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-end;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.expense-amount {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.delete-button {
+  min-height: auto;
+  padding: 5px 0;
+  color: #c43131;
+  background: transparent;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  color: #9b1c1c;
+  background: transparent;
+}
+
+footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 520px) {
+  .app {
+    padding-top: 44px;
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  form button {
+    grid-column: 1 / -1;
+  }
+}
